@@ -13,6 +13,7 @@
 		04DC7A3023E3E1B4004DA3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DC7A2F23E3E1B4004DA3E9 /* Assets.xcassets */; };
 		04DC7A3323E3E1B4004DA3E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DC7A3123E3E1B4004DA3E9 /* LaunchScreen.storyboard */; };
 		04DC7A3C23E3EF20004DA3E9 /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DC7A3B23E3EF20004DA3E9 /* OAuthSwift.framework */; };
+		26CBECDE865C6EACDA04136B /* Pods_mechmarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BAC4647FB977E8EB7C2887D /* Pods_mechmarket.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		04DC7A3223E3E1B4004DA3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DC7A3423E3E1B4004DA3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DC7A3B23E3EF20004DA3E9 /* OAuthSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OAuthSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BAC4647FB977E8EB7C2887D /* Pods_mechmarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mechmarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FCEFCE1A7DF6530A365FD70 /* Pods-mechmarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mechmarket.debug.xcconfig"; path = "Target Support Files/Pods-mechmarket/Pods-mechmarket.debug.xcconfig"; sourceTree = "<group>"; };
+		D0B8133F2C7395C93979108D /* Pods-mechmarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mechmarket.release.xcconfig"; path = "Target Support Files/Pods-mechmarket/Pods-mechmarket.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DC7A3C23E3EF20004DA3E9 /* OAuthSwift.framework in Frameworks */,
+				26CBECDE865C6EACDA04136B /* Pods_mechmarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,7 @@
 				04DC7A2723E3E1B4004DA3E9 /* mechmarket */,
 				04DC7A2623E3E1B4004DA3E9 /* Products */,
 				04DC7A3A23E3EF20004DA3E9 /* Frameworks */,
+				96B3D5CD0A8E9A522E4E2926 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +78,19 @@
 			isa = PBXGroup;
 			children = (
 				04DC7A3B23E3EF20004DA3E9 /* OAuthSwift.framework */,
+				2BAC4647FB977E8EB7C2887D /* Pods_mechmarket.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96B3D5CD0A8E9A522E4E2926 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FCEFCE1A7DF6530A365FD70 /* Pods-mechmarket.debug.xcconfig */,
+				D0B8133F2C7395C93979108D /* Pods-mechmarket.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +100,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DC7A3723E3E1B4004DA3E9 /* Build configuration list for PBXNativeTarget "mechmarket" */;
 			buildPhases = (
+				84D323403C94D8679FC06A41 /* [CP] Check Pods Manifest.lock */,
 				04DC7A2123E3E1B4004DA3E9 /* Sources */,
 				04DC7A2223E3E1B4004DA3E9 /* Frameworks */,
 				04DC7A2323E3E1B4004DA3E9 /* Resources */,
+				278E9618054F660D70B5B8C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +161,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		278E9618054F660D70B5B8C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mechmarket/Pods-mechmarket-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mechmarket/Pods-mechmarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84D323403C94D8679FC06A41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mechmarket-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04DC7A2123E3E1B4004DA3E9 /* Sources */ = {
@@ -292,6 +354,7 @@
 		};
 		04DC7A3823E3E1B4004DA3E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FCEFCE1A7DF6530A365FD70 /* Pods-mechmarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -306,6 +369,7 @@
 		};
 		04DC7A3923E3E1B4004DA3E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B8133F2C7395C93979108D /* Pods-mechmarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
