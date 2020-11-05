@@ -7,67 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0472E38825420F9300948DC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472E38725420F9300948DC7 /* AppDelegate.swift */; };
-		0472E38A25420F9300948DC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472E38925420F9300948DC7 /* SceneDelegate.swift */; };
-		0472E38C25420F9300948DC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472E38B25420F9300948DC7 /* ContentView.swift */; };
-		0472E38E25420F9400948DC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0472E38D25420F9400948DC7 /* Assets.xcassets */; };
-		0472E39125420F9400948DC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0472E39025420F9400948DC7 /* Preview Assets.xcassets */; };
-		0472E39425420F9400948DC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0472E39225420F9400948DC7 /* LaunchScreen.storyboard */; };
+		04A45B7B2553742E0039420A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45B7A2553742E0039420A /* AppDelegate.swift */; };
+		04A45B7D2553742E0039420A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45B7C2553742E0039420A /* SceneDelegate.swift */; };
+		04A45B7F2553742E0039420A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45B7E2553742E0039420A /* HomeViewController.swift */; };
+		04A45B842553742F0039420A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A45B832553742F0039420A /* Assets.xcassets */; };
+		04A45B922553742F0039420A /* mechmarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45B912553742F0039420A /* mechmarketTests.swift */; };
+		04A45B9D2553742F0039420A /* mechmarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45B9C2553742F0039420A /* mechmarketUITests.swift */; };
+		04A45BDD25537AF40039420A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45BDC25537AF40039420A /* TabBarController.swift */; };
+		04A45BE525537D530039420A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45BE425537D530039420A /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0492768125423A8400750210 /* PBXContainerItemProxy */ = {
+		04A45B8E2553742F0039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45B6F2553742E0039420A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04A45B762553742E0039420A;
+			remoteInfo = mechmarket;
+		};
+		04A45B992553742F0039420A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04A45B6F2553742E0039420A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04A45B762553742E0039420A;
+			remoteInfo = mechmarket;
+		};
+		04A45BBD255376930039420A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F435027A1A6791B200038A29;
 			remoteInfo = OAuthSwift;
 		};
-		0492768325423A8400750210 /* PBXContainerItemProxy */ = {
+		04A45BBF255376930039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C48B28021AFA598D00C7DEF6;
 			remoteInfo = OAuthSwiftMacOS;
 		};
-		0492768525423A8400750210 /* PBXContainerItemProxy */ = {
+		04A45BC1255376930039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C4B6EE1E1BF74CE300443596;
 			remoteInfo = OAuthSwiftTVOS;
 		};
-		0492768725423A8400750210 /* PBXContainerItemProxy */ = {
+		04A45BC3255376930039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C40890C01C11B37000E3146A;
 			remoteInfo = OAuthSwiftWatchOS;
 		};
-		0492768925423A8400750210 /* PBXContainerItemProxy */ = {
+		04A45BC5255376930039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F451E3C5195B8CD80051434C;
 			remoteInfo = OAuthSwiftDemo;
 		};
-		0492768B25423A8400750210 /* PBXContainerItemProxy */ = {
+		04A45BC7255376930039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C49FD5241AFB5DF500791E1A;
 			remoteInfo = OAuthSwiftMacOSDemo;
 		};
-		0492768D25423A8400750210 /* PBXContainerItemProxy */ = {
+		04A45BC9255376930039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C4D50DF71BFB693F0053B624;
 			remoteInfo = OAuthSwiftTests;
 		};
-		0492768F25423A9F00750210 /* PBXContainerItemProxy */ = {
+		04A45BD7255376BA0039420A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+			containerPortal = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F43502791A6791B200038A29;
 			remoteInfo = OAuthSwift;
@@ -75,19 +91,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0472E38425420F9300948DC7 /* mechmarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mechmarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0472E38725420F9300948DC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0472E38925420F9300948DC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0472E38B25420F9300948DC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		0472E38D25420F9400948DC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0472E39025420F9400948DC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0472E39325420F9400948DC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0472E39525420F9400948DC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0492767725423A8400750210 /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = "../../../dev/dependencies/OAuthSwift-master/OAuthSwift.xcodeproj"; sourceTree = "<group>"; };
+		04A45B772553742E0039420A /* mechmarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mechmarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A45B7A2553742E0039420A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04A45B7C2553742E0039420A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04A45B7E2553742E0039420A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		04A45B832553742F0039420A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04A45B882553742F0039420A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A45B8D2553742F0039420A /* mechmarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mechmarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A45B912553742F0039420A /* mechmarketTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mechmarketTests.swift; sourceTree = "<group>"; };
+		04A45B932553742F0039420A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A45B982553742F0039420A /* mechmarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mechmarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04A45B9C2553742F0039420A /* mechmarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mechmarketUITests.swift; sourceTree = "<group>"; };
+		04A45B9E2553742F0039420A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A45BB3255376930039420A /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = "../../../dependencies/OAuthSwift-master/OAuthSwift.xcodeproj"; sourceTree = "<group>"; };
+		04A45BDC25537AF40039420A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		04A45BE425537D530039420A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0472E38125420F9300948DC7 /* Frameworks */ = {
+		04A45B742553742E0039420A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A45B8A2553742F0039420A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A45B952553742F0039420A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -97,55 +133,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0472E37B25420F9300948DC7 = {
+		04A45B6E2553742E0039420A = {
 			isa = PBXGroup;
 			children = (
-				0492767725423A8400750210 /* OAuthSwift.xcodeproj */,
-				0472E38625420F9300948DC7 /* mechmarket */,
-				0472E38525420F9300948DC7 /* Products */,
+				04A45BB3255376930039420A /* OAuthSwift.xcodeproj */,
+				04A45B792553742E0039420A /* mechmarket */,
+				04A45B902553742F0039420A /* mechmarketTests */,
+				04A45B9B2553742F0039420A /* mechmarketUITests */,
+				04A45B782553742E0039420A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		0472E38525420F9300948DC7 /* Products */ = {
+		04A45B782553742E0039420A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0472E38425420F9300948DC7 /* mechmarket.app */,
+				04A45B772553742E0039420A /* mechmarket.app */,
+				04A45B8D2553742F0039420A /* mechmarketTests.xctest */,
+				04A45B982553742F0039420A /* mechmarketUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0472E38625420F9300948DC7 /* mechmarket */ = {
+		04A45B792553742E0039420A /* mechmarket */ = {
 			isa = PBXGroup;
 			children = (
-				0472E38725420F9300948DC7 /* AppDelegate.swift */,
-				0472E38925420F9300948DC7 /* SceneDelegate.swift */,
-				0472E38B25420F9300948DC7 /* ContentView.swift */,
-				0472E38D25420F9400948DC7 /* Assets.xcassets */,
-				0472E39225420F9400948DC7 /* LaunchScreen.storyboard */,
-				0472E39525420F9400948DC7 /* Info.plist */,
-				0472E38F25420F9400948DC7 /* Preview Content */,
+				04A45B7A2553742E0039420A /* AppDelegate.swift */,
+				04A45BDC25537AF40039420A /* TabBarController.swift */,
+				04A45B7C2553742E0039420A /* SceneDelegate.swift */,
+				04A45B7E2553742E0039420A /* HomeViewController.swift */,
+				04A45B832553742F0039420A /* Assets.xcassets */,
+				04A45B882553742F0039420A /* Info.plist */,
+				04A45BE425537D530039420A /* AccountViewController.swift */,
 			);
 			path = mechmarket;
 			sourceTree = "<group>";
 		};
-		0472E38F25420F9400948DC7 /* Preview Content */ = {
+		04A45B902553742F0039420A /* mechmarketTests */ = {
 			isa = PBXGroup;
 			children = (
-				0472E39025420F9400948DC7 /* Preview Assets.xcassets */,
+				04A45B912553742F0039420A /* mechmarketTests.swift */,
+				04A45B932553742F0039420A /* Info.plist */,
 			);
-			path = "Preview Content";
+			path = mechmarketTests;
 			sourceTree = "<group>";
 		};
-		0492767825423A8400750210 /* Products */ = {
+		04A45B9B2553742F0039420A /* mechmarketUITests */ = {
 			isa = PBXGroup;
 			children = (
-				0492768225423A8400750210 /* OAuthSwift.framework */,
-				0492768425423A8400750210 /* OAuthSwift.framework */,
-				0492768625423A8400750210 /* OAuthSwift.framework */,
-				0492768825423A8400750210 /* OAuthSwift.framework */,
-				0492768A25423A8400750210 /* OAuthSwiftDemo.app */,
-				0492768C25423A8400750210 /* OAuthSwiftMacOSDemo.app */,
-				0492768E25423A8400750210 /* OAuthSwiftTests.xctest */,
+				04A45B9C2553742F0039420A /* mechmarketUITests.swift */,
+				04A45B9E2553742F0039420A /* Info.plist */,
+			);
+			path = mechmarketUITests;
+			sourceTree = "<group>";
+		};
+		04A45BB4255376930039420A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04A45BBE255376930039420A /* OAuthSwift.framework */,
+				04A45BC0255376930039420A /* OAuthSwift.framework */,
+				04A45BC2255376930039420A /* OAuthSwift.framework */,
+				04A45BC4255376930039420A /* OAuthSwift.framework */,
+				04A45BC6255376930039420A /* OAuthSwiftDemo.app */,
+				04A45BC8255376930039420A /* OAuthSwiftMacOSDemo.app */,
+				04A45BCA255376930039420A /* OAuthSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,40 +203,83 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0472E38325420F9300948DC7 /* mechmarket */ = {
+		04A45B762553742E0039420A /* mechmarket */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0472E39825420F9400948DC7 /* Build configuration list for PBXNativeTarget "mechmarket" */;
+			buildConfigurationList = 04A45BA12553742F0039420A /* Build configuration list for PBXNativeTarget "mechmarket" */;
 			buildPhases = (
-				0472E38025420F9300948DC7 /* Sources */,
-				0472E38125420F9300948DC7 /* Frameworks */,
-				0472E38225420F9300948DC7 /* Resources */,
+				04A45B732553742E0039420A /* Sources */,
+				04A45B742553742E0039420A /* Frameworks */,
+				04A45B752553742E0039420A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0492769025423A9F00750210 /* PBXTargetDependency */,
+				04A45BD8255376BA0039420A /* PBXTargetDependency */,
 			);
 			name = mechmarket;
 			productName = mechmarket;
-			productReference = 0472E38425420F9300948DC7 /* mechmarket.app */;
+			productReference = 04A45B772553742E0039420A /* mechmarket.app */;
 			productType = "com.apple.product-type.application";
+		};
+		04A45B8C2553742F0039420A /* mechmarketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A45BA42553742F0039420A /* Build configuration list for PBXNativeTarget "mechmarketTests" */;
+			buildPhases = (
+				04A45B892553742F0039420A /* Sources */,
+				04A45B8A2553742F0039420A /* Frameworks */,
+				04A45B8B2553742F0039420A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04A45B8F2553742F0039420A /* PBXTargetDependency */,
+			);
+			name = mechmarketTests;
+			productName = mechmarketTests;
+			productReference = 04A45B8D2553742F0039420A /* mechmarketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		04A45B972553742F0039420A /* mechmarketUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A45BA72553742F0039420A /* Build configuration list for PBXNativeTarget "mechmarketUITests" */;
+			buildPhases = (
+				04A45B942553742F0039420A /* Sources */,
+				04A45B952553742F0039420A /* Frameworks */,
+				04A45B962553742F0039420A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04A45B9A2553742F0039420A /* PBXTargetDependency */,
+			);
+			name = mechmarketUITests;
+			productName = mechmarketUITests;
+			productReference = 04A45B982553742F0039420A /* mechmarketUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		0472E37C25420F9300948DC7 /* Project object */ = {
+		04A45B6F2553742E0039420A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = serenapascual;
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
-					0472E38325420F9300948DC7 = {
-						CreatedOnToolsVersion = 11.5;
+					04A45B762553742E0039420A = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					04A45B8C2553742F0039420A = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 04A45B762553742E0039420A;
+					};
+					04A45B972553742F0039420A = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 04A45B762553742E0039420A;
 					};
 				};
 			};
-			buildConfigurationList = 0472E37F25420F9300948DC7 /* Build configuration list for PBXProject "mechmarket" */;
+			buildConfigurationList = 04A45B722553742E0039420A /* Build configuration list for PBXProject "mechmarket" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -194,121 +287,152 @@
 				en,
 				Base,
 			);
-			mainGroup = 0472E37B25420F9300948DC7;
-			productRefGroup = 0472E38525420F9300948DC7 /* Products */;
+			mainGroup = 04A45B6E2553742E0039420A;
+			productRefGroup = 04A45B782553742E0039420A /* Products */;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0492767825423A8400750210 /* Products */;
-					ProjectRef = 0492767725423A8400750210 /* OAuthSwift.xcodeproj */;
+					ProductGroup = 04A45BB4255376930039420A /* Products */;
+					ProjectRef = 04A45BB3255376930039420A /* OAuthSwift.xcodeproj */;
 				},
 			);
 			projectRoot = "";
 			targets = (
-				0472E38325420F9300948DC7 /* mechmarket */,
+				04A45B762553742E0039420A /* mechmarket */,
+				04A45B8C2553742F0039420A /* mechmarketTests */,
+				04A45B972553742F0039420A /* mechmarketUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0492768225423A8400750210 /* OAuthSwift.framework */ = {
+		04A45BBE255376930039420A /* OAuthSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = OAuthSwift.framework;
-			remoteRef = 0492768125423A8400750210 /* PBXContainerItemProxy */;
+			remoteRef = 04A45BBD255376930039420A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0492768425423A8400750210 /* OAuthSwift.framework */ = {
+		04A45BC0255376930039420A /* OAuthSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = OAuthSwift.framework;
-			remoteRef = 0492768325423A8400750210 /* PBXContainerItemProxy */;
+			remoteRef = 04A45BBF255376930039420A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0492768625423A8400750210 /* OAuthSwift.framework */ = {
+		04A45BC2255376930039420A /* OAuthSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = OAuthSwift.framework;
-			remoteRef = 0492768525423A8400750210 /* PBXContainerItemProxy */;
+			remoteRef = 04A45BC1255376930039420A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0492768825423A8400750210 /* OAuthSwift.framework */ = {
+		04A45BC4255376930039420A /* OAuthSwift.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = OAuthSwift.framework;
-			remoteRef = 0492768725423A8400750210 /* PBXContainerItemProxy */;
+			remoteRef = 04A45BC3255376930039420A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0492768A25423A8400750210 /* OAuthSwiftDemo.app */ = {
+		04A45BC6255376930039420A /* OAuthSwiftDemo.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = OAuthSwiftDemo.app;
-			remoteRef = 0492768925423A8400750210 /* PBXContainerItemProxy */;
+			remoteRef = 04A45BC5255376930039420A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0492768C25423A8400750210 /* OAuthSwiftMacOSDemo.app */ = {
+		04A45BC8255376930039420A /* OAuthSwiftMacOSDemo.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = OAuthSwiftMacOSDemo.app;
-			remoteRef = 0492768B25423A8400750210 /* PBXContainerItemProxy */;
+			remoteRef = 04A45BC7255376930039420A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0492768E25423A8400750210 /* OAuthSwiftTests.xctest */ = {
+		04A45BCA255376930039420A /* OAuthSwiftTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = OAuthSwiftTests.xctest;
-			remoteRef = 0492768D25423A8400750210 /* PBXContainerItemProxy */;
+			remoteRef = 04A45BC9255376930039420A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0472E38225420F9300948DC7 /* Resources */ = {
+		04A45B752553742E0039420A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0472E39425420F9400948DC7 /* LaunchScreen.storyboard in Resources */,
-				0472E39125420F9400948DC7 /* Preview Assets.xcassets in Resources */,
-				0472E38E25420F9400948DC7 /* Assets.xcassets in Resources */,
+				04A45B842553742F0039420A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A45B8B2553742F0039420A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A45B962553742F0039420A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0472E38025420F9300948DC7 /* Sources */ = {
+		04A45B732553742E0039420A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0472E38825420F9300948DC7 /* AppDelegate.swift in Sources */,
-				0472E38A25420F9300948DC7 /* SceneDelegate.swift in Sources */,
-				0472E38C25420F9300948DC7 /* ContentView.swift in Sources */,
+				04A45B7F2553742E0039420A /* HomeViewController.swift in Sources */,
+				04A45BE525537D530039420A /* AccountViewController.swift in Sources */,
+				04A45BDD25537AF40039420A /* TabBarController.swift in Sources */,
+				04A45B7B2553742E0039420A /* AppDelegate.swift in Sources */,
+				04A45B7D2553742E0039420A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A45B892553742F0039420A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A45B922553742F0039420A /* mechmarketTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04A45B942553742F0039420A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04A45B9D2553742F0039420A /* mechmarketUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0492769025423A9F00750210 /* PBXTargetDependency */ = {
+		04A45B8F2553742F0039420A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04A45B762553742E0039420A /* mechmarket */;
+			targetProxy = 04A45B8E2553742F0039420A /* PBXContainerItemProxy */;
+		};
+		04A45B9A2553742F0039420A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04A45B762553742E0039420A /* mechmarket */;
+			targetProxy = 04A45B992553742F0039420A /* PBXContainerItemProxy */;
+		};
+		04A45BD8255376BA0039420A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OAuthSwift;
-			targetProxy = 0492768F25423A9F00750210 /* PBXContainerItemProxy */;
+			targetProxy = 04A45BD7255376BA0039420A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		0472E39225420F9400948DC7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0472E39325420F9400948DC7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		0472E39625420F9400948DC7 /* Debug */ = {
+		04A45B9F2553742F0039420A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -334,6 +458,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -358,7 +483,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -368,7 +493,7 @@
 			};
 			name = Debug;
 		};
-		0472E39725420F9400948DC7 /* Release */ = {
+		04A45BA02553742F0039420A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -394,6 +519,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -412,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -422,13 +548,13 @@
 			};
 			name = Release;
 		};
-		0472E39925420F9400948DC7 /* Debug */ = {
+		04A45BA22553742F0039420A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"mechmarket/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = Q827FU4FX4;
 				INFOPLIST_FILE = mechmarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -441,13 +567,13 @@
 			};
 			name = Debug;
 		};
-		0472E39A25420F9400948DC7 /* Release */ = {
+		04A45BA32553742F0039420A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"mechmarket/Preview Content\"";
-				ENABLE_PREVIEWS = YES;
+				DEVELOPMENT_TEAM = Q827FU4FX4;
 				INFOPLIST_FILE = mechmarket/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -460,28 +586,130 @@
 			};
 			name = Release;
 		};
+		04A45BA52553742F0039420A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q827FU4FX4;
+				INFOPLIST_FILE = mechmarketTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serenapascual.mechmarketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mechmarket.app/mechmarket";
+			};
+			name = Debug;
+		};
+		04A45BA62553742F0039420A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q827FU4FX4;
+				INFOPLIST_FILE = mechmarketTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serenapascual.mechmarketTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mechmarket.app/mechmarket";
+			};
+			name = Release;
+		};
+		04A45BA82553742F0039420A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q827FU4FX4;
+				INFOPLIST_FILE = mechmarketUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serenapascual.mechmarketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = mechmarket;
+			};
+			name = Debug;
+		};
+		04A45BA92553742F0039420A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q827FU4FX4;
+				INFOPLIST_FILE = mechmarketUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.serenapascual.mechmarketUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = mechmarket;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0472E37F25420F9300948DC7 /* Build configuration list for PBXProject "mechmarket" */ = {
+		04A45B722553742E0039420A /* Build configuration list for PBXProject "mechmarket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0472E39625420F9400948DC7 /* Debug */,
-				0472E39725420F9400948DC7 /* Release */,
+				04A45B9F2553742F0039420A /* Debug */,
+				04A45BA02553742F0039420A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0472E39825420F9400948DC7 /* Build configuration list for PBXNativeTarget "mechmarket" */ = {
+		04A45BA12553742F0039420A /* Build configuration list for PBXNativeTarget "mechmarket" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0472E39925420F9400948DC7 /* Debug */,
-				0472E39A25420F9400948DC7 /* Release */,
+				04A45BA22553742F0039420A /* Debug */,
+				04A45BA32553742F0039420A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04A45BA42553742F0039420A /* Build configuration list for PBXNativeTarget "mechmarketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A45BA52553742F0039420A /* Debug */,
+				04A45BA62553742F0039420A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04A45BA72553742F0039420A /* Build configuration list for PBXNativeTarget "mechmarketUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04A45BA82553742F0039420A /* Debug */,
+				04A45BA92553742F0039420A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 0472E37C25420F9300948DC7 /* Project object */;
+	rootObject = 04A45B6F2553742E0039420A /* Project object */;
 }

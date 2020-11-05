@@ -2,13 +2,12 @@
 //  AppDelegate.swift
 //  mechmarket
 //
-//  Created by Serena Pascual on 10/22/20.
-//  Copyright © 2020 serenapascual. All rights reserved.
+//  Created by Serena Pascual on 11/4/20.
 //
 
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
