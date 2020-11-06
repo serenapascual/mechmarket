@@ -15,6 +15,8 @@
 		04A45B9D2553742F0039420A /* mechmarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45B9C2553742F0039420A /* mechmarketUITests.swift */; };
 		04A45BDD25537AF40039420A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45BDC25537AF40039420A /* TabBarController.swift */; };
 		04A45BE525537D530039420A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45BE425537D530039420A /* AccountViewController.swift */; };
+		04A45BEE2554F34F0039420A /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A45BBE255376930039420A /* OAuthSwift.framework */; };
+		04A45BEF2554F34F0039420A /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04A45BBE255376930039420A /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		04A45BF02554F34F0039420A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				04A45BEF2554F34F0039420A /* OAuthSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		04A45B772553742E0039420A /* mechmarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mechmarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A45B7A2553742E0039420A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04A45BEE2554F34F0039420A /* OAuthSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +158,7 @@
 				04A45B902553742F0039420A /* mechmarketTests */,
 				04A45B9B2553742F0039420A /* mechmarketUITests */,
 				04A45B782553742E0039420A /* Products */,
+				04A45BE92554F24C0039420A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -200,6 +218,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		04A45BE92554F24C0039420A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -210,6 +235,7 @@
 				04A45B732553742E0039420A /* Sources */,
 				04A45B742553742E0039420A /* Frameworks */,
 				04A45B752553742E0039420A /* Resources */,
+				04A45BF02554F34F0039420A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

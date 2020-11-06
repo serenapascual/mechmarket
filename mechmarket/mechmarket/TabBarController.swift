@@ -11,18 +11,20 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		delegate = self
+//		delegate = self
 	}
     
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
+		view.backgroundColor = UIColor.white
+		
 		let home = HomeViewController()
-		let homeIcon = UITabBarItem(title: "Home", image: UIImage(named: "HomeIcon"), selectedImage: UIImage(named: "HomeIcon"))
+		let homeIcon = UITabBarItem(title: "", image: UIImage(named: "HomeIcon"), selectedImage: UIImage(named: "HomeIcon"))
 		home.tabBarItem = homeIcon
 		
 		let account = AccountViewController()
-		let accountIcon = UITabBarItem(title: "Account", image: UIImage(named: "AccountIcon"), selectedImage: UIImage(named: "AccountIcon"))
+		let accountIcon = UITabBarItem(title: "", image: UIImage(named: "AccountIcon"), selectedImage: UIImage(named: "AccountIcon"))
 		account.tabBarItem = accountIcon
 		
 		let controllers = [home, account]
