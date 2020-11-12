@@ -11,7 +11,16 @@ import SafariServices
 
 class AccountViewController: UIViewController {
 	
-	let oauthswift = OAuth2Swift(consumerKey: "Z4ERZ6j03yINfA", consumerSecret: "", authorizeUrl: "https://www.reddit.com/api/v1/authorize", accessTokenUrl: "https://www.reddit.com/api/v1/access_token", responseType: "code")
+	var oauthswift: OAuth2Swift!
+	
+	var log: ((Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) -> Void) = { result in
+		switch result {
+		 case .success(let (credential, _, _)):
+			 print(credential.oauthToken)
+		 case .failure(let error):
+			 print(error.localizedDescription)
+		}
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +39,7 @@ class AccountViewController: UIViewController {
 			button.addTarget(
 				self,
 					action: #selector(loginButtonAction),
-					for: UIControl.Event.touchUpInside
-			)
+					for: UIControl.Event.touchUpInside)
 			
 			return button
 		}()
@@ -39,19 +47,31 @@ class AccountViewController: UIViewController {
 		view.addSubview(loginButton)
 		self.view = view
 	}
-    
+	
 	@objc func loginButtonAction(_ sender:UIButton!) {
-		
-//		oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift)
-		oauthswift.accessTokenBasicAuthentification = true
+		print("Login tapped")
 
-		let _ = oauthswift.authorize(withCallbackURL: "mechmarket://oauth-callback", scope: "read", state: "stateOfFearAndConfusionOhGod") { result in
-				switch result {
-				case .success(let (credential, response, parameters)):
-					print("--- SUCCESS ---\nCredential: \(credential.oauthToken)\nResponse: \(String(describing: response))\nParameters: \(parameters)")
-				case .failure(let error):
-					print("--- FAILURE ---\nError: \(error.description)")
-				}
+		doOAuthReddit()
+	}
+}
+
+extension AccountViewController {
+	func doOAuthReddit() {
+		self.oauthswift = OAuth2Swift(
+			consumerKey: "Z4ERZ6j03yINfA",
+			consumerSecret: "",
+			authorizeUrl: "https://www.reddit.com/api/v1/authorize.compact",
+			accessTokenUrl: "https://www.reddit.com/api/v1/access_token",
+			responseType: "code")
+		
+		oauthswift.accessTokenBasicAuthentification = true
+		oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift)
+
+		let _ = oauthswift.authorize(
+			withCallbackURL: "mechmarket://oauth-callback",
+			scope: "read",
+			state: "aStateOfFearAndConfusionOhDear") { result in
+			self.log(result)
 		}
 	}
 
