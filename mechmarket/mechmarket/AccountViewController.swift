@@ -13,14 +13,7 @@ class AccountViewController: UIViewController {
 	
 	var oauthswift: OAuth2Swift!
 	
-	var log: ((Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) -> Void) = { result in
-		switch result {
-		 case .success(let (credential, _, _)):
-			 print(credential.oauthToken)
-		 case .failure(let error):
-			 print(error.localizedDescription)
-		}
-	}
+	var log: ((Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) -> Void)!
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +32,8 @@ class AccountViewController: UIViewController {
 			button.addTarget(
 				self,
 					action: #selector(loginButtonAction),
-					for: UIControl.Event.touchUpInside)
+					for: UIControl.Event.touchUpInside
+			)
 			
 			return button
 		}()
@@ -62,17 +56,42 @@ extension AccountViewController {
 			consumerSecret: "",
 			authorizeUrl: "https://www.reddit.com/api/v1/authorize.compact",
 			accessTokenUrl: "https://www.reddit.com/api/v1/access_token",
-			responseType: "code")
+			responseType: "code"
+		)
+		
+		self.log = { [self] result in
+			switch result {
+			case .success(let (credential, response, parameters)):
+				print("\(credential.oauthToken) \(String(describing: response)) \(parameters)")
+				get()
+			case .failure(let error):
+				print(error.localizedDescription)
+			}
+		}
 		
 		oauthswift.accessTokenBasicAuthentification = true
-		oauthswift.authorizeURLHandler = SafariURLHandler(viewController: self, oauthSwift: oauthswift)
+		oauthswift.authorizeURLHandler = SafariURLHandler(
+			viewController: self, oauthSwift: oauthswift
+		)
 
 		let _ = oauthswift.authorize(
 			withCallbackURL: "mechmarket://oauth-callback",
-			scope: "read",
-			state: "aStateOfFearAndConfusionOhDear") { result in
+			scope: "read identity",
+			state: "aStateOfFearAndConfusionOhDear"
+		) { result in
 			self.log(result)
 		}
 	}
 
+	func get() {
+		self.oauthswift.client.get(
+			URL(string: "https://oauth.reddit.com/api/v1/me")!) { result in
+			switch result {
+			case .success(let response):
+				print(response.dataString())
+			case .failure(let error):
+				print(error.localizedDescription)
+			}
+		}
+	}
 }
