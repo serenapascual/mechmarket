@@ -7,16 +7,52 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UISearchBarDelegate {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		let searchBarTitle = UILabel()
+		searchBarTitle.text = "What would you like to find?"
+		searchBarTitle.textColor = UIColor.black
+		searchBarTitle.translatesAutoresizingMaskIntoConstraints = false
+
+		let searchBar = UISearchBar()
+		searchBar.placeholder = "KAT Milkshake"
+		searchBar.backgroundImage = UIImage()
+//		searchBar.isTranslucent = true
+		searchBar.barTintColor = UIColor.white
+		searchBar.compatibleSearchTextField.leftView?.tintColor = UIColor.gray
+		searchBar.compatibleSearchTextField.backgroundColor = UIColor.white
+		
+		searchBar.searchTextField.layer.shadowColor = UIColor.black.cgColor
+		searchBar.searchTextField.layer.shadowOpacity = 0.25
+		searchBar.searchTextField.layer.shadowOffset = CGSize(width: 2, height: 2)
+		searchBar.searchTextField.layer.shadowRadius = 3
+
+		searchBar.translatesAutoresizingMaskIntoConstraints = false
+		searchBar.delegate = self
+		
+		view.addSubview(searchBarTitle)
+		view.addSubview(searchBar)
+		
+		let defaultPadding = CGFloat(20)
+		let searchBarPadding = defaultPadding - 5
+		
+		searchBarTitle.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: defaultPadding / 2).isActive = true
+		searchBarTitle.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: defaultPadding).isActive = true
+		searchBarTitle.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -(defaultPadding * 2)).isActive = true
+		searchBarTitle.heightAnchor.constraint(equalToConstant: 40).isActive = true
+		
+		searchBar.topAnchor.constraint(equalTo: searchBarTitle.bottomAnchor, constant: -5).isActive = true
+		searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: searchBarPadding).isActive = true
+		searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -(searchBarPadding * 2)).isActive = true
+		searchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		
 		obtainUserlessGrant()
 	}
 	
 	func obtainUserlessGrant() {
-		
 		let semaphore = DispatchSemaphore (value: 0)
 		
 		let parameters = "grant_type=https://oauth.reddit.com/grants/installed_client&device_id=DO_NOT_TRACK_THIS_DEVICE"
@@ -45,5 +81,38 @@ class HomeViewController: UIViewController {
 		semaphore.wait()
 	}
 	
+	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+		searchBar.setShowsCancelButton(true, animated: true)
+		
+
+	}
+	
+	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+		searchBar.setShowsCancelButton(false, animated: true)
+		searchBar.resignFirstResponder()
+	}
 }
 
+// Below code authored by Joshpy from StackOverflow ca. Sept 2019
+// https://stackoverflow.com/a/58067550/7786888
+extension UISearchBar {
+
+	// Due to searchTextField property who available iOS 13 only, extend this property for iOS 13 previous version compatibility
+	var compatibleSearchTextField: UITextField {
+		guard #available(iOS 13.0, *) else { return legacySearchField }
+		return self.searchTextField
+	}
+
+	private var legacySearchField: UITextField {
+		if let textField = self.subviews.first?.subviews.last as? UITextField {
+			// Xcode 11 previous environment
+			return textField
+		} else if let textField = self.value(forKey: "searchField") as? UITextField {
+			// Xcode 11 run in iOS 13 previous devices
+			return textField
+		} else {
+			// exception condition or error handler in here
+			return UITextField()
+		}
+	}
+}

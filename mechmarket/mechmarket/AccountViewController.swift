@@ -25,8 +25,9 @@ class AccountViewController: UIViewController {
 			button.setTitle("Login with Reddit", for: .normal)
 			button.tintColor = UIColor.white
 			button.backgroundColor = UIColor.init(named: "AccentColor")
+			button.layer.cornerRadius = 10
 			
-			button.frame = CGRect(x: 0, y: 0, width: 150, height: 50)
+			button.frame = CGRect(x: 0, y: 0, width: 150, height: 40)
 			button.center = self.view.center
 			
 			button.addTarget(
