@@ -20,8 +20,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
 		let searchBar = UISearchBar()
 		searchBar.placeholder = "KAT Milkshake"
 		searchBar.backgroundImage = UIImage()
-//		searchBar.isTranslucent = true
-		searchBar.barTintColor = UIColor.white
 		searchBar.compatibleSearchTextField.leftView?.tintColor = UIColor.gray
 		searchBar.compatibleSearchTextField.backgroundColor = UIColor.white
 		
@@ -48,6 +46,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
 		searchBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: searchBarPadding).isActive = true
 		searchBar.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -(searchBarPadding * 2)).isActive = true
 		searchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
+				
+		searchBar.layoutIfNeeded()
 		
 		obtainUserlessGrant()
 	}
@@ -69,22 +69,36 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
 		request.httpBody = postData
 
 		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-		  guard let data = data else {
-			print(String(describing: error))
-			return
-		  }
-		  print(String(data: data, encoding: .utf8)!)
-		  semaphore.signal()
+			guard let data = data else {
+				print(String(describing: error))
+				return
+			}
+			print(String(data: data, encoding: .utf8)!)
+			do {
+				if let dataTaskJson = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+					if let token = dataTaskJson["access_token"] as? String {
+						print(token)
+					}
+					else {
+						print("ERROR: Could not find value for key \"access_token\"")
+					}
+				}
+				else {
+					print("ERROR: Could not serialize json object")
+				}
+			}
+			catch {
+				print(error.localizedDescription)
+			}
+			
+			semaphore.signal()
 		}
-
 		task.resume()
 		semaphore.wait()
 	}
 	
 	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
 		searchBar.setShowsCancelButton(true, animated: true)
-		
-
 	}
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

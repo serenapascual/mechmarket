@@ -17,6 +17,7 @@
 		04A45BE525537D530039420A /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A45BE425537D530039420A /* AccountViewController.swift */; };
 		04A45BEE2554F34F0039420A /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A45BBE255376930039420A /* OAuthSwift.framework */; };
 		04A45BEF2554F34F0039420A /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 04A45BBE255376930039420A /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		04D8C0452565EE52003B67DB /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D8C0442565EE52003B67DB /* KeychainService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		04A45BB3255376930039420A /* OAuthSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthSwift.xcodeproj; path = "../../../dependencies/OAuthSwift-master/OAuthSwift.xcodeproj"; sourceTree = "<group>"; };
 		04A45BDC25537AF40039420A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		04A45BE425537D530039420A /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		04D8C0442565EE52003B67DB /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				04A45B832553742F0039420A /* Assets.xcassets */,
 				04A45B882553742F0039420A /* Info.plist */,
 				04A45BE425537D530039420A /* AccountViewController.swift */,
+				04D8C0442565EE52003B67DB /* KeychainService.swift */,
 			);
 			path = mechmarket;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				04A45BDD25537AF40039420A /* TabBarController.swift in Sources */,
 				04A45B7B2553742E0039420A /* AppDelegate.swift in Sources */,
 				04A45B7D2553742E0039420A /* SceneDelegate.swift in Sources */,
+				04D8C0452565EE52003B67DB /* KeychainService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
