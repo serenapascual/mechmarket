@@ -9,53 +9,35 @@ import Foundation
 import Security
 
 public class KeyChainService: NSObject {
-	class func save(key: String, data: Data) -> OSStatus {
+	class func store(key: String, value: String) -> OSStatus {
 		let query = [
-			kSecClass as String       : kSecClassGenericPassword as String,
-			kSecAttrAccount as String : key,
-			kSecValueData as String   : data ] as [String : Any]
+			kSecAttrAccount: key,
+			kSecValueData: value.data(using: .utf8)!,
+			kSecClass: kSecClassGenericPassword,
+			kSecReturnAttributes: true,
+			kSecReturnData: true
+		] as CFDictionary
 		
-		SecItemDelete(query as CFDictionary)
-		
-		return SecItemAdd(query as CFDictionary, nil)
+		SecItemDelete(query)
+		return SecItemAdd(query, nil)
 	}
 	
 	class func load(key: String) -> Data? {
 		let query = [
-			kSecClass as String       : kSecClassGenericPassword,
-			kSecAttrAccount as String : key,
-			kSecReturnData as String  : kCFBooleanTrue!,
-			kSecMatchLimit as String  : kSecMatchLimitOne ] as [String : Any]
+			kSecAttrAccount: key,
+			kSecClass: kSecClassGenericPassword,
+			kSecReturnAttributes: true,
+			kSecReturnData: true
+		  ] as CFDictionary
 		
-		var dataTypeRef: AnyObject? = nil
-		
-		let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
+		var resultReference: AnyObject?
+		let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &resultReference)
 		
 		if status == noErr {
-			return dataTypeRef as! Data?
+			let resultDictionary = resultReference as! NSDictionary
+			return resultDictionary[kSecValueData] as? Data
 		} else {
 			return nil
 		}
-	}
-	
-	class func createUniqueID() -> String {
-		let uuid: CFUUID = CFUUIDCreate(nil)
-		let cfStr: CFString = CFUUIDCreateString(nil, uuid)
-		
-		let swiftString: String = cfStr as String
-		return swiftString
-	}
-	
-}
-
-extension Data {
-	
-	init<T>(from value: T) {
-		var value = value
-		self.init(buffer: UnsafeBufferPointer(start: &value, count: 1))
-	}
-	
-	func to<T>(type: T.Type) -> T {
-		return self.withUnsafeBytes { $0.load(as: T.self) }
 	}
 }

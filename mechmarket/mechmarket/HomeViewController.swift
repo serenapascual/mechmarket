@@ -8,10 +8,81 @@
 import UIKit
 
 class HomeViewController: UIViewController, UISearchBarDelegate {
+	let semaphore = DispatchSemaphore(value: 0)
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		initHomeView()
+		
+		if let receivedData: Data = KeyChainService.load(key: "UserlessToken") {
+			let result = String(data: receivedData, encoding: .utf8)!
+			print("hey, token exists!: \(result)")
+		}
+		else {
+			print("no existing token. initiating request")
+			obtainUserlessToken()
+		}
+	}
+	
+	func obtainUserlessToken() {
+		let request = createTokenRequest()
+		handleTokenRequest(request: request)
+	}
+	
+	func createTokenRequest() -> URLRequest {
+		let parameters = "grant_type=https://oauth.reddit.com/grants/installed_client&device_id=DO_NOT_TRACK_THIS_DEVICE"
+		let postData =  parameters.data(using: .utf8)
+
+		let credentialsString = "Z4ERZ6j03yINfA:".data(using: .utf8)!
+		let credentialsBase64 = Data(credentialsString).base64EncodedString()
+		
+		var request = URLRequest(url: URL(string: "https://www.reddit.com/api/v1/access_token/?response_type=code")!,timeoutInterval: Double.infinity)
+		request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+		request.addValue("Basic \(credentialsBase64.string)", forHTTPHeaderField: "Authorization")
+
+		request.httpMethod = "POST"
+		request.httpBody = postData
+		
+		return request
+	}
+	
+	func handleTokenRequest(request: URLRequest) {
+		let task = URLSession.shared.dataTask(with: request) { [self] data, response, error in
+			guard let data = data else {
+				print(String(describing: error))
+				return
+			}
+			print(String(data: data, encoding: .utf8)!)
+			
+			// Check for access token in HTTP response and store in keychain if found
+			do {
+				guard let dataTaskJson = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+					print("ERROR: Could not serialize json object")
+					return
+				}
+				guard let token = dataTaskJson["access_token"] as? String else {
+					print("ERROR: Could not find value in json object for key \"access_token\"")
+					return
+				}
+				let status = KeyChainService.store(key: "UserlessToken", value: token)
+				guard status == 0 else {
+					print("ERROR: Token could not be added to keychain (status \(status))")
+					return
+				}
+				print("SUCCESS: Token added to keychain")
+			}
+			catch {
+				print(error.localizedDescription)
+			}
+			
+			semaphore.signal()
+		}
+		task.resume()
+		semaphore.wait()
+	}
+	
+	func initHomeView() {
 		let searchBarTitle = UILabel()
 		searchBarTitle.text = "What would you like to find?"
 		searchBarTitle.textColor = UIColor.black
@@ -48,53 +119,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
 		searchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
 				
 		searchBar.layoutIfNeeded()
-		
-		obtainUserlessGrant()
-	}
-	
-	func obtainUserlessGrant() {
-		let semaphore = DispatchSemaphore (value: 0)
-		
-		let parameters = "grant_type=https://oauth.reddit.com/grants/installed_client&device_id=DO_NOT_TRACK_THIS_DEVICE"
-		let postData =  parameters.data(using: .utf8)
-
-		let credentialsString = "Z4ERZ6j03yINfA:".data(using: .utf8)!
-		let credentialsBase64 = Data(credentialsString).base64EncodedString()
-		
-		var request = URLRequest(url: URL(string: "https://www.reddit.com/api/v1/access_token/?response_type=code")!,timeoutInterval: Double.infinity)
-		request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-		request.addValue("Basic \(credentialsBase64.string)", forHTTPHeaderField: "Authorization")
-
-		request.httpMethod = "POST"
-		request.httpBody = postData
-
-		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-			guard let data = data else {
-				print(String(describing: error))
-				return
-			}
-			print(String(data: data, encoding: .utf8)!)
-			do {
-				if let dataTaskJson = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-					if let token = dataTaskJson["access_token"] as? String {
-						print(token)
-					}
-					else {
-						print("ERROR: Could not find value for key \"access_token\"")
-					}
-				}
-				else {
-					print("ERROR: Could not serialize json object")
-				}
-			}
-			catch {
-				print(error.localizedDescription)
-			}
-			
-			semaphore.signal()
-		}
-		task.resume()
-		semaphore.wait()
 	}
 	
 	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
